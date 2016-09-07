@@ -5,6 +5,8 @@ firefox_packages:
   - firefox
   - firefox-locale-en
   - firefox-locale-es
+firefox_homebrew_packages:
+  - firefox
 
 firefox_profiles: []
 #  - name: alice

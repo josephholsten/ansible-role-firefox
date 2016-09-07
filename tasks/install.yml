@@ -1,0 +1,16 @@
+---
+- name: ensure packages are installed
+  apt:
+    name: "{{ item }}"
+    state: "{{ firefox_pkg_state }}"
+    update_cache: yes
+    cache_valid_time: 3600
+  with_items: "{{ firefox_packages }}"
+  when: ansible_os_family == "Linux"
+
+- name: ensure packages are installed
+  homebrew_cask:
+    name: "{{ item }}"
+  with_items: "{{ firefox_homebrew_packages }}"
+  when: ansible_os_family == "Darwin"
+
